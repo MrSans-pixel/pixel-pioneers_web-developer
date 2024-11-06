@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
+    <link rel="stylesheet" href="stygram.css">
+    <title>Program Pelatihan</title>
+</head>
+<body>
+    <!-- NavBar -->
+    <nav class="navbar" id="navbar">
+        <a href="#" class="navbar__logo"><i class="ri-pixelfed-line"></i></a>
+
+        <div class="navbar__menu">
+            <a href="index.html" class="navbar__link">Beranda</a>
+            <a href="program.html" class="navbar__link aktif">Program</a>
+            <a href="#" class="navbar__link">Forum</a>
+            <a href="#" class="navbar__link">Tentang</a>
+        </div>
+
+        <div class="navbar__aksi">
+            <div class="navbar__lokasi">
+                <h5>Semarang, Indonesia</h5>
+            </div>
+            <!-- Mode web -->
+            <div class="mode">
+                <div class="moon-sun">
+                    <i class="ri-moon-fill ikon moon"></i>
+                    <i class="ri-sun-fill ikon sun"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Toogle mode web -->
+    <div class="toggle-switch" onclick="beralihMode()">
+        <span class="beralih"></span>
+    </div>
+
+    <!-- List Program -->
+     <section class="program">
+        <div class="program__header">
+            <h3>Program</h3>
+            <p>Berikut adalah beberapa program buatan kami yang memiliki kaitan dengan AI.</p>
+        </div>
+
+        <div class="program__list">
+            <section class="kategori">
+                <div class="kategori__program">
+                    <div class="kartu-program">
+                        <img src="assets/catur.png" alt="Catur" class="kartu-program__img">
+                        <div class="kartu-program__info">
+                            <h5>Catur</h5>
+                        </div>
+                        <p class="kartu-program__desc">Melatih kecerdasan dengan menghadapi AI dalam permainan catur.</p>
+                        <a href="Catur/index.html">
+                            <button class="btn">Coba Program</button>
+                        </a>
+                    </div>
+                    <div class="kartu-program">
+                        <img src="assets/simongame.png" alt="Catur" class="kartu-program__img">
+                        <div class="kartu-program__info">
+                            <h5>Simon Game</h5>
+                        </div>
+                        <p class="kartu-program__desc">Melatih ingatan dengan mengingat warna yang menyala secara random.</p>
+                        <a href="Simon Game/index.html">
+                            <button class="btn">Coba Program</button>
+                        </a>
+                    </div>
+                    <div class="kartu-program">
+                        <img src="assets/texttospeech.png" alt="Catur" class="kartu-program__img">
+                        <div class="kartu-program__info">
+                            <h5>Text to Speech</h5>
+                        </div>
+                        <p class="kartu-program__desc">Menggunakan AI untuk mengubah teks menjadi suara dengan mudah.</p>
+                        <a href="Text to Speech/index.html">
+                            <button class="btn">Coba Program</button>
+                        </a>
+                    </div>
+                    <div class="kartu-program soon">
+                        <div class="kartu-program__info">
+                            <h5>Coming Soon</h5>
+                        </div>
+                        <p class="kartu-program__desc">Nantikan fitur lainnya dari kami</p>
+                        <a href="#">
+                            <button class="btn">Coming Soon</button>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+     </section>
+
+     <footer class="footer">
+        <div class="footer__logo">
+            <a href="#"><i class="ri-pixelfed-line"></i></a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

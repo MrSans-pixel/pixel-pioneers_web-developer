@@ -1,0 +1,656 @@
+/* Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root{
+    /* Variabel Warna */
+    --warna-body: #fff;
+    --warna-navbar: #b7a6a6;
+    --warna-primer: #1f2937;
+    --warna-sekunder: #e5e7eb;
+    --warna-toogle: #ccc;
+    --warna-teks-1: #6b7280;
+    --warna-teks-2: #000;
+    --warna-tombol: #fff;
+    --warna-desc: #7a7a7a;
+
+    /* Variabel Transisi */
+    --tran-02: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.4s ease;
+    --tran-05: all 0.5s ease;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body{
+    background: var(--warna-body);
+    transition: var(--tran-04);
+}
+
+body.gelap{
+    --warna-body: #18191a;
+    --warna-navbar: #242526;
+    --warna-primer: #e5e7eb;
+    --warna-sekunder: #1f2937;
+    --warna-toogle: #000;
+    --warna-teks-1: #ccc;
+    --warna-teks-2: #fff;
+    --warna-tombol: #000;
+    --warna-desc: #d1bcbc;
+}
+
+a{
+    text-decoration: none;
+    color: var(--warna-primer);
+}
+
+/* Setting Tombol */
+.btn{
+    border: 2px solid var(--warna-primer);
+    background: var(--warna-primer);
+    color: var(--warna-tombol);
+    cursor: pointer;
+    border-radius: 10px;
+    transition: var(--tran-05);
+}
+
+.btn:hover{
+    color: var(--warna-primer);
+    background: var(--warna-sekunder);
+    border-color: var(--warna-sekunder);
+    border-radius: 5px;
+}
+
+.btn--secondary{
+    color: var(--warna-primer);
+    background: var(--warna-body);
+    border: 2px solid var(--warna-sekunder);
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 10px;
+    transition: var(--tran-05);
+}
+
+.btn--secondary:hover,
+.team__sosial a:hover{
+    color: var(--warna-tombol);
+    background: var(--warna-primer);
+    border-color: var(--warna-primer);
+}
+
+/* NavBar */
+.navbar{
+    background: var(--warna-navbar);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 60px;
+    transition: transform 0.3s ease;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar.hilang{
+    transform: translateY(-100%);
+}
+
+.navbar__logo{
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    gap: 10px;
+}
+
+.navbar__logo i{
+    font-size: 30px;
+}
+
+.navbar__menu{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.navbar__link{
+    font-size: 14px;
+    font-weight: 500;
+    transition: var(--tran-05);
+}
+
+.navbar__link.aktif{
+    color: var(--warna-tombol);
+    padding: 5px;
+    border: 1px solid var(--warna-primer);
+    border-radius: 15px;
+    background: var(--warna-primer);
+}
+
+.navbar__link:hover{
+    color: var(--warna-tombol);
+}
+
+.navbar__aksi{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar__lokasi h5{
+    font-weight: 500;
+    color: var(--warna-teks-1);
+    font-size: 12px;
+}
+
+.navbar__aksi .btn{
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* Mode web */
+.navbar__aksi .mode{
+    background: var(--warna-body);
+    position: relative;
+    border-radius: 50px;
+    transition: var(--tran-05);
+}
+
+.navbar__aksi .mode .moon-sun{
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar__aksi .mode i{
+    position: absolute;
+    color: var(--warna-primer);
+    transition: var(--tran-03);
+}
+
+.navbar__aksi .mode i.moon{
+    opacity: 0;
+}
+
+body.gelap .navbar__aksi .mode i.moon{
+    opacity: 1;
+}
+
+body.gelap .navbar__aksi .mode i.sun{
+    opacity: 0;
+}
+
+.toggle-switch{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    min-width: 50px;
+    z-index: 1000;
+    cursor: pointer;
+    border-radius: 6px;
+    position: fixed;
+    right: 10px;
+    bottom: 15px;
+    background: var(--warna-body);
+    transition: transform 0.3s ease;
+}
+
+.toggle-switch.hilang{
+    transform: translateX(150%);
+}
+
+.toggle-switch .beralih{
+    position: relative;
+    height: 22px;
+    width: 44px;
+    background: var(--warna-toogle);
+    border-radius: 25px;
+    transition: var(--tran-05);
+}
+
+.beralih::before{
+    content: '';
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    background: var(--warna-navbar);
+    transition: var(--tran-03);
+}
+
+body.gelap .beralih::before{
+    left: 24px;
+}
+
+/* Intro Tim */
+.team{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100px 60px;
+    gap: 60px;
+    height: calc(100vh - 75px);
+}
+
+.team__konten,
+.team__intro{
+    width: 50%;
+}
+
+.team__konten h2{
+    font-size: 48px;
+    line-height: 60px;
+    font-weight: 400;
+    margin-top: 20px;
+    width: 85%;
+}
+
+.team__konten h2 b{
+    font-family: 'Pixelify Sans', sans-serif;
+    color: var(--warna-primer);
+    font-weight: 500;
+}
+
+.team__intro{
+    padding-right: 40px;
+}
+
+.team__intro h3{
+    font-weight: 500;
+    font-size: 40px;
+    font-family: 'Pixelify sans', sans-serif;
+    line-height: 50px;
+    margin-bottom: 10px;
+}
+
+.team__intro p{
+    color: var(--warna-teks-1);
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.team__aksi{
+    display: flex;
+    gap: 10px;
+}
+
+.team__aksi .btn{
+    padding: 6px 20px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.team__sosial{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    right: 30px;
+    top: 20%;
+}
+
+.team__sosial a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    border: 2px solid var(--warna-sekunder);
+    padding: 8px;
+    border-radius: 50%;
+    transition: var(--tran-05);
+}
+
+/* Artikel */
+.artikel{
+    padding: 80px 60px 100px;
+    background: var(--warna-sekunder);
+}
+
+.artikel__header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 36px;
+}
+
+.artikel__header h3{
+    font-size: 28px;
+    font-weight: 400;
+}
+
+.artikel__header p{
+    font-size: 13px;
+    width: 50%;
+    margin: 0 20px;
+    padding: 5px 16px;
+    border-radius: 10px;
+    color: var(--warna-body);
+    background: var(--warna-primer);
+    border-color: var(--warna-primer);
+}
+
+.artikel__list .kategori:first-child{
+    margin-bottom: 100px;
+}
+
+.kategori__header{
+    display: flex;
+    align-items: center;
+}
+
+.kategori__judul,
+.kategori__desc{
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.kategori__judul{
+    gap: 12px;
+    color: var(--warna-primer);
+}
+
+.kategori__judul h4{
+    font-size: 22px;
+    font-weight: 400;
+    font-family: 'Pixelify sans', sans-serif;
+}
+
+.kategori__desc{
+    gap: 40px;
+    justify-content: space-between;
+}
+
+.kategori__desc p{
+    font-size: 13px;
+    color: var(--warna-teks-1);
+    font-weight: 500;
+}
+
+.kategori__desc a{
+    font-size: 22px;
+}
+
+.kategori__artikel{
+    margin-top: 40px;
+    display: flex;
+    gap: 20px;
+}
+
+.kartu-artikel{
+    position: relative;
+    width: 25%;
+    height: 420px;
+    padding: 20px;
+    background: var(--warna-body);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.kartu-artikel__img{
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    object-position: top center;
+    border: 1px solid var(--warna-sekunder);
+    margin-bottom: 20px;
+}
+
+.kartu-artikel__info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+    margin-bottom: 15px;
+}
+
+.kartu-artikel__info h5{
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--warna-teks-2);
+}
+
+.kartu-artikel__info p{
+    font-size: 12px;
+    color: var(--warna-teks-1);
+    font-weight: 500;
+}
+
+.kartu-artikel__desc{
+    font-size: 13px;
+    color: var(--warna-desc);
+    margin-bottom: 30px;
+}
+
+.kartu-artikel .btn{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 8px 20px;
+    border-radius: 16px 0 10px 0;
+    border: none;
+    color: var(--warna-tombol);
+    background: var(--warna-primer);
+}
+
+.kartu-artikel .btn:hover{
+    background: var(--warna-teks-2);
+}
+
+/* Komunitas */
+.komunitas{
+    padding: 60px 60px 80px;
+    display: flex;
+    align-items: center;
+    gap: 100px;
+}
+
+.komunitas__ai-kiri,
+.komunitas__ai-kanan{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.komunitas h3{
+    font-size: 32px;
+    font-weight: 400;
+    font-family: 'Pixelify sans', sans-serif;
+    text-align: center;
+    padding: 30px;
+}
+
+.forum{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--warna-sekunder);
+}
+
+.forum i{
+    font-size: 20px;
+    padding: 10px;
+    color: var(--warna-primer);
+    background: var(--warna-tombol);
+    border-radius: 10px;
+    font-weight: bold;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.forum > div{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.forum__info{
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--warna-teks-2);
+}
+
+.footer{
+    padding: 20px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--warna-navbar);
+}
+
+.footer__logo a{
+    font-weight: bold;
+    font-size: 30px;
+}
+
+@media screen and (max-width: 1230px){
+    .team__konten h2{
+        font-size: 38px;
+        text-align: center;
+    }
+
+    .team__intro h3{
+        font-size: 30px;
+    }
+
+    .team__intro p{
+        font-size: 15px;
+    }
+
+    .kategori__judul{
+        width: 40%;
+    }
+
+    .kategori__desc{
+        width: 60%;
+    }
+
+    .kategori__artikel{
+        flex-wrap: wrap;
+    }
+
+    .kartu-artikel{
+        width: 48%;
+    }
+}
+
+@media screen and (max-width: 992px){
+    .navbar{
+        padding: 20px 30px;
+    }
+
+    .team{
+        padding: 100px 30px 40px;
+    }
+
+    .team__intro h3{
+        font-size: 22px;
+        line-height: 34px;
+    }
+
+    .team__intro p{
+        font-size: 13px;
+    }
+
+    .team__sosial{
+        top: 16%;
+    }
+
+    .kategori__judul,
+    .kategori__desc,
+    .forum{
+        width: 100%;
+    }
+
+    .artikel{
+        padding: 80px 30px 100px;
+    }
+
+    .kategori__header{
+        flex-direction: column;
+    }
+
+    .kategori__judul{
+        margin-bottom: 20px;
+    }
+
+    .komunitas{
+        padding: 60px 30px 80px;
+        flex-direction: column;
+        gap: 60px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .navbar__aksi{
+        display: none;
+    }
+
+    .team{
+        flex-direction: column;
+        height: auto;
+        padding: 40px 30px 0px;
+        gap: 30px;
+    }
+
+    .team__konten,
+    .team__intro{
+        width: 100%;
+        text-align: center;
+    }
+
+    .team__konten h2{
+        width: 100%;
+        margin-top: 50px;
+        font-size: 30px;
+    }
+
+    .team__aksi{
+        justify-content: center;
+    }
+
+    .team__sosial{
+        position: relative;
+        flex-direction: row;
+        right: auto;
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+
+    .artikel__header h3{
+        font-size: 24px;
+    }
+
+    .kategori__judul h4{
+        font-size: 20px;
+    }
+
+    .kartu-artikel{
+        width: 100%;
+        height: 500px;
+    }
+
+    .kartu-artikel__img{
+        height: 300px;
+    }
+
+    .komunitas h3{
+        font-size: 26px;
+    }
+}

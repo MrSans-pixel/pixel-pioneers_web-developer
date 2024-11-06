@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Pixel Pioneers</title>
+</head>
+<body>
+    <!-- NavBar -->
+    <nav class="navbar" id="navbar">
+        <a href="#" class="navbar__logo"><i class="ri-pixelfed-line"></i></a>
+
+        <div class="navbar__menu">
+            <a href="index.html" class="navbar__link aktif">Beranda</a>
+            <a href="program.html" class="navbar__link">Program</a>
+            <a href="#" class="navbar__link">Forum</a>
+            <a href="#" class="navbar__link">Tentang</a>
+        </div>
+
+        <div class="navbar__aksi">
+            <div class="navbar__lokasi">
+                <h5>Semarang, Indonesia</h5>
+            </div>
+            <!-- Mode web -->
+            <div class="mode">
+                <div class="moon-sun">
+                    <i class="ri-moon-fill ikon moon"></i>
+                    <i class="ri-sun-fill ikon sun"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Toogle mode web -->
+    <div class="toggle-switch" onclick="beralihMode()">
+        <span class="beralih"></span>
+    </div>
+
+    <!-- Pengenalan tim -->
+    <section class="team">
+        <div class="team__konten">
+            <h2>Halo! Kami dari tim <b>Pixel Pioneers</b></h2>
+        </div>
+
+        <div class="team__intro">
+            <h3>Pentingnya mempelajari AI sedini mungkin</h3>
+            <p>Platform ini kami rancang untuk semua tingkatan sehingga menjadikannya sumber informasi penting untuk tetap mendapatkan informasi tentang kemajuan AI.</p>
+            <div class="team__aksi">
+                <button class="btn">Tentang Kami</button>
+                <a href="program.html">
+                    <button class="btn--secondary">Program Pelatihan</button>
+                </a>
+            </div>
+        </div>
+
+        <!-- Media sosial tim -->
+        <div class="team__sosial">
+            <a href="#"><i class="ri-mail-fill"></i></a>
+            <a href="#"><i class="ri-whatsapp-line"></i></a>
+            <a href="#"><i class="ri-instagram-line"></i></a>
+            <a href="#"><i class="ri-github-fill"></i></a>
+        </div>
+    </section>
+
+    <!-- Artikel yang berkaitan dengan web -->
+    <section class="artikel">
+        <div class="artikel__header">
+            <h3>Artikel</h3>
+            <p>Artikel-artikel ini dapat membantu memahami konsep dasar AI, seperti pembelajaran mesin <b>(machine learning)</b>, serta aplikasi nyata AI dalam berbagai industri, seperti kesehatan, finansial, dan manufaktur.</p>
+        </div>
+
+        <div class="artikel__list">
+            <section class="kategori">
+                <div class="kategori__header">
+                    <div class="kategori__judul">
+                        <h4>Artikel Dalam Negeri</h4>
+                    </div>
+                    <div class="kategori__desc">
+                        <p>Beberapa artikel Indonesia yang kami peroleh</p>
+                        <a href="#"><i class="ri-share-circle-line"></i></a>
+                    </div>
+                </div>
+
+                <div class="kategori__artikel">
+                    <div class="kartu-artikel">
+                        <img src="assets/umsu.jpg" alt="Umsu" class="kartu-artikel__img">
+                        <div class="kartu-artikel__info">
+                            <h5>Mengenal Artificial Intelligence (AI)</h5>
+                            <p>Umsu</p>
+                        </div>
+                        <p class="kartu-artikel__desc">
+                            Artikel ini mencakup berbagai macam penjelasan jenis AI, seperti AI lemah (Weak AI) yang terbatas pada tugas tertentu dan AI kuat (Strong AI) yang berupaya mendekati kecerdasan manusia.
+                        </p>
+                        <a href="https://umsu.ac.id/artikel/mengenal-artificial-intelligence-ai-pengertian-sejarah-kegunaan-dan-contoh-penerapannya/">
+                            <button class="btn">Lihat Artikel</button>
+                        </a>
+                    </div>
+                    <div class="kartu-artikel">
+                        <img src="assets/tempo.jpg" alt="Tekno Tempo" class="kartu-artikel__img">
+                        <div class="kartu-artikel__info">
+                            <h5>Mengenal Teknologi AI dan Bahayanya bagi Manusia</h5>
+                            <p>Tekno Tempo</p>
+                        </div>
+                        <p class="kartu-artikel__desc">
+                            Artikel ini membahas dampak AI terhadap berbagai hal, mulai dari pergeseran ekonomi hingga resikonya pada etika dan potensi persenjataan.
+                        </p>
+                        <a href="https://tekno.tempo.co/read/1699037/mengenal-teknologi-ai-dan-bahayanya-bagi-manusia">
+                            <button class="btn">Lihat Artikel</button>
+                        </a>
+                    </div>
+                    <div class="kartu-artikel">
+                        <img src="assets/dicoding.jpg" alt="Dicoding" class="kartu-artikel__img">
+                        <div class="kartu-artikel__info">
+                            <h5>Cara Kerja Kecerdasan Buatan dan Contoh Penerapannya</h5>
+                            <p>Dicoding</p>
+                        </div>
+                        <p class="kartu-artikel__desc">
+                            Di artikel ini, AI dijelaskan melalui pendekatan cara kerjanya, yang memanfaatkan algoritma dan data untuk belajar secara mandiri.
+                        </p>
+                        <a href="https://dicoding.com/blog/mengenal-kecerdasan-buatan/">
+                            <button class="btn">Lihat Artikel</button>
+                        </a>
+                    </div>
+                    <div class="kartu-artikel">
+                        <img src="assets/staditek.jpg" alt="Staditek" class="kartu-artikel__img">
+                        <div class="kartu-artikel__info">
+                            <h5>Mengenal Machine Learning dalam AI dan Penerapannya</h5>
+                            <p>Staditek</p>
+                        </div>
+                        <p class="kartu-artikel__desc">
+                            Artikel ini mengeksplorasi metode utama machine learning beserta cara machine learning memproses data untuk prediksi dan klasifikasi.
+                        </p>
+                        <a href="https://www.staditek.id/insight/arti-machine-learning/">
+                            <button class="btn">Lihat Artikel</button>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="kategori">
+                <div class="kategori__header">
+                    <div class="kategori__judul">
+                        <h4>Artikel Internasional</h4>
+                    </div>
+                    <div class="kategori__desc">
+                        <p>Beberapa artikel internasional yang kami peroleh</p>
+                        <a href="#"><i class="ri-share-circle-line"></i></a>
+                    </div>
+                </div>
+
+                <div class="kategori__artikel">
+                    <div class="kartu-artikel">
+                        <img src="assets/algotive.jpg" alt="Algotive" class="kartu-artikel__img">
+                        <div class="kartu-artikel__info">
+                            <h5>The Future of AI: 10 Trends in Artificial Intelligence in 2024</h5>
+                            <p>Algotive</p>
+                        </div>
+                        <p class="kartu-artikel__desc">
+                            Artikel ini membahas bagaimana AI meningkatkan produktivitas dan kolaborasi lintas industri.
+                        </p>
+                        <a href="https://www.algotive.ai/blog/the-future-of-ai-10-trends-in-artificial-intelligence-in-2024">
+                            <button class="btn">Lihat Artikel</button>
+                        </a>
+                    </div>
+                    <div class="kartu-artikel">
+                        <img src="assets/mckinsey.jpg" alt="McKinsey" class="kartu-artikel__img">
+                        <div class="kartu-artikel__info">
+                            <h5>The State of AI in Early 2024</h5>
+                            <p>McKinsey</p>
+                        </div>
+                        <p class="kartu-artikel__desc">
+                            Artikel ini meneliti global investment dalam AI, meningkatnya kepentingan generative AI untuk manajemen data, dan peran analytical AI dalam pengurangan biaya.
+                        </p>
+                        <a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai">
+                            <button class="btn">Lihat Artikel</button>
+                        </a>
+                    </div>
+                    <div class="kartu-artikel">
+                        <img src="assets/mitnews.jpg" alt="MIT News" class="kartu-artikel__img">
+                        <div class="kartu-artikel__info">
+                            <h5>Making it easier to verify an AI model’s responses</h5>
+                            <p>MIT News</p>
+                        </div>
+                        <p class="kartu-artikel__desc">
+                            Artikel ini membahas alat baru yang membantu pengguna memverifikasi AI output dengan menyediakan referensi data yang jelas, yang dirancang untuk mempercepat proses validasi dan mengurangi kesalahan.
+                        </p>
+                        <a href="https://news.mit.edu/2024/making-it-easier-verify-ai-models-responses-1021">
+                            <button class="btn">Lihat Artikel</button>
+                        </a>
+                    </div>
+                    <div class="kartu-artikel">
+                        <img src="assets/oliverwyman.jpg" alt="OliverWyman" class="kartu-artikel__img">
+                        <div class="kartu-artikel__info">
+                            <h5>The Opportunities, Risks, And Future Of Generative AI</h5>
+                            <p>OliverWyman</p>
+                        </div>
+                        <p class="kartu-artikel__desc">
+                            Artikel ini membahas dampak transformatif generative AI dalam konteks bisnis beserta rekomendasi untuk penggunaan yang etis.
+                        </p>
+                        <a href="https://www.oliverwyman.com/our-expertise/insights/2023/jun/future-generative-ai-opportunities-risks.html">
+                            <button class="btn">Lihat Artikel</button>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <section class="komunitas">
+        <h3>Komunitas AI</h3>
+        <div class="komunitas__ai-kiri">
+            <div class="forum">
+                <i class="fa-brands fa-stack-overflow"></i>
+                <div class="forum__info">
+                    <h5>Stack Overflow</h5>
+                </div>
+            </div>
+            <div class="forum">
+                <i class="fa-brands fa-reddit"></i>
+                <div class="forum__info">
+                    <h5>Reddit - r/ArtificialIntelligence</h5>
+                </div>
+            </div>
+            <div class="forum">
+                <i class="fa-brands fa-github"></i>
+                <div class="forum__info">
+                    <h5>AI Hub di GitHub</h5>
+                </div>
+            </div>
+        </div>
+        <div class="komunitas__ai-kanan">
+            <div class="forum">
+                <i class="fa-brands fa-discourse"></i>
+                <div class="forum__info">
+                    <h5>Discourse</h5>
+                </div>
+            </div>
+            <div class="forum">
+                <i class="fa-brands fa-kaggle"></i>
+                <div class="forum__info">
+                    <h5>Kaggle</h5>
+                </div>
+            </div>
+            <div class="forum">
+                <i class="fa-brands fa-medium"></i>
+                <div class="forum__info">
+                    <h5>TDS di Medium</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer__logo">
+            <a href="#"><i class="ri-pixelfed-line"></i></a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

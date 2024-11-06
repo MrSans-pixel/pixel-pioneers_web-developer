@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root{
+    /* Variabel Warna */
+    --warna-body: #fff;
+    --warna-navbar: #b7a6a6;
+    --warna-primer: #1f2937;
+    --warna-sekunder: #e5e7eb;
+    --warna-toogle: #ccc;
+    --warna-teks-1: #6b7280;
+    --warna-teks-2: #000;
+    --warna-tombol: #fff;
+    --warna-desc: #7a7a7a;
+
+    /* Variabel Transisi */
+    --tran-02: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.4s ease;
+    --tran-05: all 0.5s ease;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body{
+    background: var(--warna-body);
+    transition: var(--tran-04);
+}
+
+body.gelap{
+    --warna-body: #18191a;
+    --warna-navbar: #242526;
+    --warna-primer: #e5e7eb;
+    --warna-sekunder: #1f2937;
+    --warna-toogle: #000;
+    --warna-teks-1: #ccc;
+    --warna-teks-2: #fff;
+    --warna-tombol: #000;
+    --warna-desc: #d1bcbc;
+}
+
+a{
+    text-decoration: none;
+    color: var(--warna-primer);
+}
+
+/* Setting Tombol */
+.btn{
+    border: 2px solid var(--warna-primer);
+    background: var(--warna-primer);
+    color: var(--warna-tombol);
+    cursor: pointer;
+    border-radius: 10px;
+    transition: var(--tran-05);
+}
+
+.btn:hover{
+    color: var(--warna-primer);
+    background: var(--warna-sekunder);
+    border-color: var(--warna-sekunder);
+    border-radius: 5px;
+}
+
+/* NavBar */
+.navbar{
+    background: var(--warna-navbar);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 60px;
+    transition: transform 0.3s ease;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar.hilang{
+    transform: translateY(-100%);
+}
+
+.navbar__logo{
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    gap: 10px;
+}
+
+.navbar__logo i{
+    font-size: 30px;
+}
+
+.navbar__menu{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.navbar__link{
+    font-size: 14px;
+    font-weight: 500;
+    transition: var(--tran-05);
+}
+
+.navbar__link.aktif{
+    color: var(--warna-tombol);
+    padding: 5px;
+    border: 1px solid var(--warna-primer);
+    border-radius: 15px;
+    background: var(--warna-primer);
+}
+
+.navbar__link:hover{
+    color: var(--warna-tombol);
+}
+
+.navbar__aksi{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar__lokasi h5{
+    font-weight: 500;
+    color: var(--warna-teks-1);
+    font-size: 12px;
+}
+
+.navbar__aksi .btn{
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* Mode web */
+.navbar__aksi .mode{
+    background: var(--warna-body);
+    position: relative;
+    border-radius: 50px;
+    transition: var(--tran-05);
+}
+
+.navbar__aksi .mode .moon-sun{
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar__aksi .mode i{
+    position: absolute;
+    color: var(--warna-primer);
+    transition: var(--tran-03);
+}
+
+.navbar__aksi .mode i.moon{
+    opacity: 0;
+}
+
+body.gelap .navbar__aksi .mode i.moon{
+    opacity: 1;
+}
+
+body.gelap .navbar__aksi .mode i.sun{
+    opacity: 0;
+}
+
+.toggle-switch{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    min-width: 50px;
+    z-index: 1000;
+    cursor: pointer;
+    border-radius: 6px;
+    position: fixed;
+    right: 10px;
+    bottom: 15px;
+    background: var(--warna-body);
+    transition: transform 0.3s ease;
+}
+
+.toggle-switch.hilang{
+    transform: translateX(150%);
+}
+
+.toggle-switch .beralih{
+    position: relative;
+    height: 22px;
+    width: 44px;
+    background: var(--warna-toogle);
+    border-radius: 25px;
+    transition: var(--tran-05);
+}
+
+.beralih::before{
+    content: '';
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    background: var(--warna-navbar);
+    transition: var(--tran-03);
+}
+
+body.gelap .beralih::before{
+    left: 24px;
+}
+
+/* Program */
+.program{
+    padding: 80px 60px 100px;
+    background: var(--warna-sekunder);
+}
+
+.program__header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 36px;
+    margin-top: 36px;
+}
+
+.program__header h3{
+    font-size: 28px;
+    font-weight: 400;
+}
+
+.program__header p{
+    font-size: 13px;
+    width: 50%;
+    margin: 0 20px;
+    padding: 5px 16px;
+    border-radius: 10px;
+    color: var(--warna-body);
+    background: var(--warna-primer);
+    border-color: var(--warna-primer);
+}
+
+.program__list .kategori:first-child{
+    margin-bottom: 100px;
+}
+
+.kategori__program{
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.kartu-program{
+    position: relative;
+    width: 25%;
+    height: 420px;
+    padding: 20px;
+    background: var(--warna-body);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.kartu-program.soon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.kartu-program__img{
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    object-position: top center;
+    border: 1px solid var(--warna-sekunder);
+    margin-bottom: 20px;
+}
+
+.kartu-program__info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+    margin-bottom: 15px;
+}
+
+.kartu-program__info h5{
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--warna-teks-2);
+}
+
+.kartu-program__desc{
+    font-size: 13px;
+    color: var(--warna-desc);
+    margin-bottom: 30px;
+}
+
+.kartu-program .btn{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 8px 20px;
+    border-radius: 16px 0 10px 0;
+    border: none;
+    color: var(--warna-tombol);
+    background: var(--warna-primer);
+}
+
+.kartu-program .btn:hover{
+    background: var(--warna-teks-2);
+}
+
+.footer{
+    padding: 20px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--warna-navbar);
+}
+
+.footer__logo a{
+    font-weight: bold;
+    font-size: 30px;
+}
+
+@media screen and (max-width: 1230px){
+    .kategori__program{
+        flex-wrap: wrap;
+    }
+
+    .kartu-program{
+        width: 48%;
+    }
+}
+
+@media screen and (max-width: 992px){
+    .navbar{
+        padding: 20px 30px;
+    }
+
+    .program{
+        padding: 80px 30px 100px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .navbar__aksi{
+        display: none;
+    }
+
+    .program__header h3{
+        font-size: 24px;
+    }
+
+    .kartu-program{
+        width: 100%;
+        height: 500px;
+    }
+
+    .kartu-program__img{
+        height: 300px;
+    }
+}
