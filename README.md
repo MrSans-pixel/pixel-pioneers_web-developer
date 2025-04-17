@@ -1,4 +1,4 @@
-# repo-pertama
-## Repositori Pertama
+# first-web
+## Web Developer
 Hello  
 I'm Sans
